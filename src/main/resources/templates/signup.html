@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="../static/css/global.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+        #signup-container {
+            padding: 90px 30px;
+            margin: 16px;
+            border-radius: 50px;
+            background-image: radial-gradient(farthest-side at center, rgba(0, 23, 255, 0.7), rgba(0, 0, 0, 0));
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            aspect-ratio: 2/1;
+        }
+        table {
+            border-spacing: 16px;
+        }
+        button {
+            border: none;
+            border-bottom: 2px solid #0015ff;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        button:hover {
+            font-weight: bolder;
+        }
+        #message-container {
+            width: 300px;
+            aspect-ratio: 2/1;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .nav-icon:hover > .nav-text {
+            background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0, 128, 255, 0.9));
+        }
+        .nav-icon img {
+            background-image: radial-gradient(rgb(255, 255, 255), rgba(0, 157, 255, 0.6));
+        }
+    </style>
+</head>
+<body>
+    <div id="signup-container" class="theme1">
+        <div id="message-container">
+            <label id="message"></label>
+            <button id="message-button">
+                <a id="message-link" href="index.html"></a>
+            </button>
+        </div>
+        <form id="signup-form" name="signup" style="position: relative">
+            <nav id="form-nav" style="top: -80px;">
+                <a href="index.html" class="nav-icon">
+                    <img src="../static/images/home.svg" alt="home">
+                    <div class="nav-text">Home</div>
+                </a>
+                <a href="login.html" class="nav-icon">
+                    <img src="../static/images/login.svg" alt="login">
+                    <div class="nav-text">Login</div>
+                </a>
+                <a href="signup.html" class="nav-icon">
+                    <img src="../static/images/signup.svg" alt="signup">
+                    <div class="nav-text">Signup</div>
+                </a>
+            </nav>
+            <label style="position: relative; top: -20px">Sign Up</label>
+            <table>
+                <tbody>
+                <tr>
+                    <th>
+                        <label for="username">Username</label>
+                    </th>
+                    <td>
+                        <input type="text" id="username" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="password">Password</label>
+                    </th>
+                    <td>
+                        <input type="password" id="password" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="confirm-password">Confirm Password</label>
+                    </th>
+                    <td>
+                        <input type="password" id="confirm-password" required>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="submit" style="position: relative; top: 15px">Submit</button>
+        </form>
+    </div>
+    <script src="../static/js/global.js"></script>
+</body>
+</html>

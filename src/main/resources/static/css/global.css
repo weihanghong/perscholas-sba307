@@ -1,0 +1,235 @@
+.theme1 {
+    --primary: #00b2ff;
+    --secondary: #ffc400;
+    --accent: #41ff00;
+}
+
+main {
+    margin: 16px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.5);
+    overflow: clip;
+    text-align: center;
+}
+
+header {
+    display: inline-block;
+    margin: 10px 0;
+    font-family: 'Roboto', sans-serif; /*Web font*/
+    font-size: 28px;
+    font-weight: bold;
+    background: linear-gradient(var(--primary), var(--secondary));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+footer {
+    width: 100%;
+    height: 30px;
+    background-image: linear-gradient(45deg, var(--primary), var(--secondary));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#navigation {
+    border-radius: 9px;
+    box-shadow: 0 0 10px 4px var(--accent);
+    background-color: var(--accent);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    margin: 16px 0;
+    gap: 12px;
+}
+
+#navigation > div {
+    width: 90%;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+#navigation >div:hover {
+    background-image: radial-gradient(closest-side at 10% 50%, rgb(0, 255, 139) 25%, rgba(255, 255, 255, 0));
+}
+
+select {
+    width: 100px;
+    background-image: radial-gradient(closest-side at 90% 50%, rgb(80, 255, 0) 25%, rgba(220, 220, 220, 0.35));
+    appearance: none;
+    border: none;
+    border-radius: 6px;
+    padding: 4px;
+    margin-bottom: 16px;
+}
+
+select:focus {
+    outline: none;
+}
+
+#content {
+    height: 100px;
+}
+
+@keyframes pop {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+a {
+    text-decoration: none;
+    appearance: none;
+    color: black;
+}
+#form-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: absolute;
+}
+.nav-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    overflow: hidden;
+    transition: width .2s linear;
+}
+.nav-icon:hover > .nav-text {
+    width: 70px;
+    height: 24px;
+    overflow: clip;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(8, 255, 0, 0.9));
+}
+.nav-icon {
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon img {
+    border-radius: 50%;
+    background-image: radial-gradient(rgb(255, 255, 255), rgba(4, 255, 17, 0.6));
+    padding: 5px;
+}
+
+#playground {
+    height: 300px;
+    width: 50%;
+    margin: 8px;
+    display: flex;
+    position: relative;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background-image: radial-gradient(closest-corner, rgba(0,0,0,0) 88%, rgb(0, 0, 0) 92%);
+    border-bottom: 8px solid rgb(0, 0, 0);
+    overflow: clip;
+}
+
+#player {
+    background-image: radial-gradient(var(--accent), var(--primary));
+    width: 30px;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    border-radius: 30px;
+    transition: transform .4s ease-in;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+        background-image: radial-gradient(var(--secondary), var(--primary));
+    }
+    50% {
+        transform: translateY(-160px);
+    }
+    100% {
+        transform: translateY(0);
+        background-image: radial-gradient(var(--secondary), var(--primary));
+    }
+}
+
+#spawn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.enemy {
+    position: absolute;
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 35%;
+    opacity: 0;
+    background-image: radial-gradient(closest-corner, rgba(218, 218, 218, 0.8) 65%, rgb(255, 0, 0) 70%);
+}
+
+.tutorial {
+    position: absolute;
+    width: auto;
+}
+
+.tutorial-start {
+    background-image: radial-gradient(rgba(255, 0, 0, 0.7), rgba(255, 0, 0, 0));
+    border-radius: 50%;
+    border: 2px solid rgba(255, 0, 0, 0.5);
+    width: 30px;
+    height: 30px;
+}
+
+.tutorial-start:hover {
+    background-image: radial-gradient(rgba(255, 0, 0, 0.9), rgba(255, 0, 0, 0.1));
+    outline: 1px solid rgb(255, 0, 0);
+}
+
+@keyframes moveLeftAndSpin {
+    from {
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-50vw) rotate(-720deg);
+        opacity: 1;
+    }
+}
+
+@keyframes upDown {
+    from {
+        height: 60%;
+    }
+    to {
+        height: 100%;
+    }
+}
